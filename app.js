@@ -3,7 +3,7 @@ const app = express()
 const path = require('path')
 
 app.set('view engine', 'ejs')
-app.set('views', '/views')
+app.set('views', __dirname, '/views/pages')
 
 app.get('/', (req, res) =>{
     var title = "Dynamobility"
