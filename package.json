@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "start-server": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/luismendezc/opendatacamp/issues"
   },
-  "homepage": "https://github.com/luismendezc/opendatacamp#readme"
+  "homepage": "https://github.com/luismendezc/opendatacamp#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
 }
