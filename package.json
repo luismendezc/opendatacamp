@@ -1,0 +1,19 @@
+{
+  "name": "dynamobility",
+  "version": "1.0.0",
+  "description": "ENTSPANNT ZUM ZIEL: MULTIMODAL PARKEN, UMSTEIGEN, ABREISEN",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luismendezc/opendatacamp.git"
+  },
+  "author": "MMS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luismendezc/opendatacamp/issues"
+  },
+  "homepage": "https://github.com/luismendezc/opendatacamp#readme"
+}
