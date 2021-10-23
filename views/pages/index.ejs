@@ -1,6 +1,6 @@
 <%- include('../partials/head') %>
     <%- include('../partials/header') %>
-     <%=  mobiStations[0].lat %>
+
         <div id="mapid">
             <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
                 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -21,7 +21,7 @@
                     // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
                 });
                 
-                function setBikeMarker (lat,lng){
+                function setBikeMarker (lat,lng, name){
                     var marker = L.marker([lat, lng], {icon: BikeIcon}).addTo(mymap);
                     marker.bindPopup("Test")
                 }
