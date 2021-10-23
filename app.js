@@ -49,6 +49,11 @@ app.get('/test', (req, res) => {
     
 })
 
+app.post('/result', (req, res) => {
+    const { userinfo } = req.body;
+    
+})
+
 
 app.get('/dvb', (req, res) => {
     /*if (!req.query.radius) {
