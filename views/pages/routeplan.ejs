@@ -3,4 +3,17 @@
 
     <%- dvbData %>
 
+    <script>
+        var html = '<%- dvbData %>';
+
+var $tempElement = $('<div>').html(html);
+console.log($tempElement.find('.trip-slider-small').text());
+// or using vanilla JS
+
+var tempElement = document.createElement('div');
+tempElement.innerHTML = html;
+
+console.log(tempElement.querySelector('.trip-slider-small').textContent);
+    </script>
+
         <%- include('../partials/footer') %>
