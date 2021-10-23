@@ -21,7 +21,20 @@
                     // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
                 });
                 
-                var marker = L.marker([51.04088507976174, 13.747935536172829], {icon: BikeIcon}).addTo(mymap);
+                function setBikeMarker (lat,lng){
+                    var marker = L.marker([lat, lng], {icon: BikeIcon}).addTo(mymap);
+                }
+                
+                
+                var Bahnhof = [51.04040404, 13.8];
+                var Postplatz = [51.0883234, 13.4]
+                var stations = [Bahnhof, Postplatz];
+
+                // for (station in stations) {
+                //     setBikeMarker(station[0], station[1])
+                // }
+                setBikeMarker(51.04088507976174, 13.747935536172829);
+                // var marker = L.marker([51.04088507976174, 13.747935536172829], {icon: BikeIcon}).addTo(mymap);
             </script>
         </div>
 
