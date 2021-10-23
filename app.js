@@ -5,6 +5,8 @@ const path = require('path')
 
 const nextbike = require('./utils/nextbike')
 
+app.use(express.static(path.join(__dirname, 'public')))
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views/pages'))
 
@@ -25,10 +27,18 @@ app.get('/test', (req, res) => {
                 return res.send({ error })
             }
         
-            console.log("Next Bike data: "+ nextBikeData)
+            const mobiStationsSource = nextBikeData.countries[0].cities[0].places
+            var mobiStations = []
+            
+            //console.log(mobiStations)
+            mobiStationsSource.forEach(element => {
+                mobiStations.push({ name: element.name, lat: element.lat, lng: element.lng,  bikes: element.bikes_available_to_rent})
+            });
+
+            console.log(mobiStations)
 
             res.render('index',{
-                nextbike: nextBikeData
+                mobiStations: mobiStations
             
             })
         })
