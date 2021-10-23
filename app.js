@@ -16,6 +16,56 @@ app.get('/', (req, res) =>{
     res.render('index', { title })
 })
 
+app.get('/route', (req, res)=>{
+    if (!req.query.radius) {
+        return res.send({
+            error: 'You must provide a radius range!'
+        })
+    }
+
+    nextbike(req.query.radius, (error, nextBikeData) => {
+        if (error) {
+            return res.send({ error })
+        }
+    
+        const mobiStationsSource = nextBikeData.countries[0].cities[0].places
+        var mobiStations = []
+        
+        //console.log(mobiStations)
+        mobiStationsSource.forEach(element => {
+            mobiStations.push({ name: element.name, lat: element.lat, lng: element.lng,  bikes: element.bikes_available_to_rent})
+        });
+
+        dvb( (error, dvbData) => {
+            if (error) {
+                return res.send({ error })
+            }
+        
+            /*const mobiStationsSource = nextBikeData.countries[0].cities[0].places
+            var mobiStations = []
+            
+            //console.log(mobiStations)
+            mobiStationsSource.forEach(element => {
+                mobiStations.push({ name: element.name, lat: element.lat, lng: element.lng,  bikes: element.bikes_available_to_rent})
+            });*/
+
+
+            console.log(dvbData.substring(dvbData.indexOf('<h1 class="heading style11">Verbindungsauskunft</h1>'), dvbData.indexOf('<h2 class="heading style12">Fahrtdetails</h2>')))
+
+
+            res.render('index',{
+                dvbData: dvbData.substring(dvbData.indexOf('<h1 class="heading style11">Verbindungsauskunft</h1>'), dvbData.indexOf('<h2 class="heading style12">Fahrtdetails</h2>')),
+                mobiStations: mobiStations
+            })
+        })
+
+    
+    })
+
+    
+
+})
+
 app.get('/tramMap', (req, res) =>{
     var title = "Dynamobility"
     res.render('trams', { title })
