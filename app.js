@@ -13,6 +13,11 @@ app.get('/', (req, res) =>{
     res.render('index', { title })
 })
 
+app.get('/tramMap', (req, res) =>{
+    var title = "Dynamobility"
+    res.render('trams', { title })
+})
+
 app.get('/test', (req, res) => {
     if (!req.query.radius) {
         return res.send({
