@@ -81,10 +81,12 @@
 
 #mapid{
     z-index:1;
-width: 68.75%;
+width: 100%;
+height: 600px;
 margin: 5px;
 border-radius: 5px;
-padding: 5px;}
+padding: 5px;
+}
 body{
     background: #F3AC26;
 }
