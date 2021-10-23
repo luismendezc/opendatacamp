@@ -40,8 +40,6 @@ app.get('/test', (req, res) => {
                 mobiStations.push({ name: element.name, lat: element.lat, lng: element.lng,  bikes: element.bikes_available_to_rent})
             });
 
-            console.log(mobiStations)
-
             res.render('index',{
                 mobiStations: mobiStations
             
