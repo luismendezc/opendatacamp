@@ -1,11 +1,11 @@
 <%- include('../partials/head') %>
     <%- include('../partials/header') %>
-
+     <%=  mobiStations[0].lat %>
         <div id="mapid">
             <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
                 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
                 crossorigin=""></script>
-
+            
             <script>
                 var mymap = L.map('mapid').setView([51.04088507976174, 13.747935536172829], 16);
                 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -23,18 +23,13 @@
                 
                 function setBikeMarker (lat,lng){
                     var marker = L.marker([lat, lng], {icon: BikeIcon}).addTo(mymap);
+                    marker.bindPopup("Test")
                 }
                 
-                
-                var Bahnhof = [51.04040404, 13.8];
-                var Postplatz = [51.0883234, 13.4]
-                var stations = [Bahnhof, Postplatz];
-
-                // for (station in stations) {
-                //     setBikeMarker(station[0], station[1])
-                // }
+                <% for(var i=0; i < mobiStations.length; i++) { %>
+                    setBikeMarker(<%=  mobiStations[i].lat %>, <%=  mobiStations[i].lng %>);
+                <% } %>
                 setBikeMarker(51.04088507976174, 13.747935536172829);
-                // var marker = L.marker([51.04088507976174, 13.747935536172829], {icon: BikeIcon}).addTo(mymap);
             </script>
         </div>
 
