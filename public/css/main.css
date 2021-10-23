@@ -1,4 +1,4 @@
-#sumit-btn{
+#submit-btn{
     background-color: #f3ac26; 
     color: #060604; 
     position: relative; 
@@ -65,5 +65,11 @@
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
+}
+
+.main-body{
+    display: flex;
+  flex-direction: row;
+  height: 100%;
 }
 
