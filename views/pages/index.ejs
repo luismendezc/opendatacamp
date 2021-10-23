@@ -40,6 +40,35 @@
                     var marker = L.marker([lat, lng], { icon: BikeIcon }).addTo(mymap);
                     marker.bindPopup("<b>" + name + "</b><br>" + bikes + " Fahrräder sind verfügbar");
                 }
+
+                var circle = L.circle([51.03984646311162, 13.748125423835354], {
+                    radius: 7,
+                    color: 'black',
+                    opacity: 0.7,
+                    fillColor: 'yellow',
+                    fillOpacity: '0.5'
+                }).addTo(mymap);
+                var circle = L.circle([51.04115536844868, 13.74958479726216],{
+                    radius: 7,
+                    color: 'black',
+                    opacity: 0.7,
+                    fillColor: 'yellow',
+                    fillOpacity: '0.5'
+                }).addTo(mymap);
+                var circle = L.circle([51.040648957041604, 13.749128680312026],{
+                    radius: 7,
+                    color: 'black',
+                    opacity: 0.7,
+                    fillColor: 'yellow',
+                    fillOpacity: '0.5'
+                }).addTo(mymap);
+
+                var marker = L.marker([51.04611, 13.75499]).addTo(mymap);
+                marker.bindPopup("Straßburger Platz")
+                var marker = L.marker([51.04257, 13.75133]).addTo(mymap);
+                marker.bindPopup("Georg-Arnhold-Bad")
+                var marker = L.marker([51.03838, 13.74660]).addTo(mymap);
+                marker.bindPopup("Lennéplatz")
                 
                 <% for (var i = 0; i < mobiStations.length; i++) { %>
                     setBikeMarker(<%=  mobiStations[i].lat %>, <%=  mobiStations[i].lng %>, "<%=  mobiStations[i].name %>", <%=  mobiStations[i].bikes %>);
