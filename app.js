@@ -5,11 +5,11 @@ const path = require('path')
 
 const nextbike = require('./utils/nextbike')
 const dvb = require('./utils/dvb')
-<<<<<<< HEAD
+
 const vvo = require('./utils/vvo')
-=======
+
 const parking = require('./utils/parking')
->>>>>>> f449e85eb8d5a4794f174379261e5fb4c8b10ca7
+
 
 app.use(express.static(path.join(__dirname, 'public')))
 
