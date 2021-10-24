@@ -121,7 +121,7 @@ app.get('/', (req, res)=>{
             });*/
 
 
-            console.log(dvbData.substring(dvbData.indexOf('<h1 class="heading style11">Verbindungsauskunft</h1>'), dvbData.indexOf('<h2 class="heading style12">Fahrtdetails</h2>')))
+            //console.log(dvbData.substring(dvbData.indexOf('<h1 class="heading style11">Verbindungsauskunft</h1>'), dvbData.indexOf('<h2 class="heading style12">Fahrtdetails</h2>')))
 
 
             res.render('index',{
