@@ -5,7 +5,11 @@ const path = require('path')
 
 const nextbike = require('./utils/nextbike')
 const dvb = require('./utils/dvb')
+<<<<<<< HEAD
 const vvo = require('./utils/vvo')
+=======
+const parking = require('./utils/parking')
+>>>>>>> f449e85eb8d5a4794f174379261e5fb4c8b10ca7
 
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -117,21 +121,18 @@ app.get('/', (req, res)=>{
                 mobiStations: mobiStations
             })
         })
-
-    
     })
-
-    
-
 })
 
-
-app.post('/result', (req, res) => {
-    const { userinfo } = req.body;
-    
+app.get('/parking', (req, res) => {
+    parking((error, parkingData) =>{
+        if(error){
+            return res.send({ error })
+        }
+        const parkingStatus = parkingData.lots
+        res.render('parking', { parkingStatus })
+    })
 })
-
-
 
 app.listen(3000, () => {
     console.log("Server started, listening on port 3000")
