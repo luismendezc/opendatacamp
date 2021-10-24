@@ -5,6 +5,7 @@ const path = require('path')
 
 const nextbike = require('./utils/nextbike')
 const dvb = require('./utils/dvb')
+const parking = require('./utils/parking')
 
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -49,9 +50,14 @@ app.get('/test', (req, res) => {
     
 })
 
-app.post('/result', (req, res) => {
-    const { userinfo } = req.body;
-    
+app.get('/parking', (req, res) => {
+    parking((error, parkingData) =>{
+        if(error){
+            return res.send({ error })
+        }
+        const parkingStatus = parkingData.lots
+        res.render('parking', { parkingStatus })
+    })
 })
 
 

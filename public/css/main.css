@@ -95,3 +95,11 @@ body{
 font-size: 30px;
 padding: 0px 10px;
 }
+
+.parking{
+  margin: 5px;
+}
+
+.free{
+  text-align: right;
+}
