@@ -44,6 +44,26 @@
                 </div>
             </div>
         </div>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h2>Parken DD</h2>
+                    <ul>
+                        <li>Adress</li>
+                        <li>Name</li>
+                        <li>Location</li>
+                        <li>Available Slots</li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <% for (var i = 0; i < parking.length; i++) { %>
+                        <%=  parking[i].adress %>, <%=  parking[i].name %>
+                    <% } %>
+                    
+                </div>
+            </div>
+        </div>
 
     <hr>
         <div class="container">
