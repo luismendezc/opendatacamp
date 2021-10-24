@@ -1,0 +1,29 @@
+<%- include('../partials/head') %>
+    <%- include('../partials/header') %>
+
+<% for(let p of parkingStatus) { %> 
+    <% if (p.free !==0) { %> 
+        <% if(p.state === "open") { %>
+    <div class="card parking" style="width: 18rem; position: relative; flex-direction: row">
+        <div class="card-body">
+            <h5 class="card-title"><%= p.name %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= p.address %></h6>
+        </div>
+        <div class="card-body free">
+            <% if (p.free <= 10) { %>  
+                <h6 style="color: red;"><%= p.free %>/<%= p.total %></h6>
+            <% } %> 
+            <% if (p.free > 10 && p.free <= 50) { %>
+                <h6 style="color: orange;"><%= p.free %>/<%= p.total %></h6>
+            <% } %>
+            <% if(p.free > 50) { %> 
+                <h6 style="color: green;"><%= p.free %>/<%= p.total %></h6>
+                <% } %>
+        </div>
+    </div>
+        <% } %> 
+    <% } %> 
+<% } %>
+
+
+<%- include('../partials/footer') %>
