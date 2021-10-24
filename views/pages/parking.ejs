@@ -81,10 +81,14 @@
                         fillOpacity: '0.5'
                     }).addTo(mymap);
             
-                    
-                    var marker = L.marker([51.03855, 13.73151]).addTo(mymap);
+                    var parkIcon = L.icon({
+                        iconUrl: src = "https://upload.wikimedia.org/wikipedia/commons/8/80/Zeichen_314-50_-_Parkplatz%2C_StVO_2013.svg",
+                        iconSize: [30, 30], 
+                    });
+
+                    var marker = L.marker([51.03855, 13.73151], {icon: parkIcon}).addTo(mymap);
                     marker.bindPopup("City Center")
-                    var marker = L.marker([51.0345974, 13.744492]).addTo(mymap);
+                    var marker = L.marker([51.0345974, 13.744492], {icon: parkIcon}).addTo(mymap);
                     marker.bindPopup("Strehlener Strasse")
                     
                     
