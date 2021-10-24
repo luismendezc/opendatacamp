@@ -11,12 +11,12 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views/pages'))
 
-app.get('/', (req, res) =>{
+app.get('/test', (req, res) =>{
     var title = "Dynamobility"
-    res.render('index', { title })
+    res.render('trams')
 })
 
-app.get('/route', (req, res)=>{
+app.get('/', (req, res)=>{
     if (!req.query.radius) {
         return res.send({
             error: 'You must provide a radius range!'
