@@ -61,12 +61,20 @@ app.get('/test', (req, res) =>{
                 
 
               //console.log(arrVVO[0])
-
+              parking((error, parkingData) =>{
+                if(error){
+                    return res.send({ error })
+                }
+                const parkingStatus = parkingData.lots
                 res.render('trams',{
                     dvbData: dvbData.substring(dvbData.indexOf('<h1 class="heading style11">Verbindungsauskunft</h1>'), dvbData.indexOf('<h2 class="heading style12">Fahrtdetails</h2>')),
                     mobiStations: mobiStations,
-                    vvoData: arrVVO
+                    vvoData: arrVVO,
+                    parking: parkingStatus
                 })
+            })
+
+              
 
             })
 
