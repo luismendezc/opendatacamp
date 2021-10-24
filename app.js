@@ -142,6 +142,10 @@ app.get('/parking', (req, res) => {
     })
 })
 
+app.get('/ticket', (req, res) => {
+    res.render('ticket')
+})
+
 app.listen(3000, () => {
     console.log("Server started, listening on port 3000")
 })
